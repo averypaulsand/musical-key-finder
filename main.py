@@ -27,7 +27,7 @@ def reformat_input(notes):
     return converted_notes
 
 
-# Assign single-digit moniker for later string matching
+# Assign single-digit moniker to sharps for later string matching
 # C# = 1, D# = 2, F# = 3, G# = 4, A# = 5
 def convert_accidentals(note):
     converted_note = ""
@@ -72,17 +72,29 @@ def print_matches(matches):
 def run():
     # Complete listing of keys
     keys = [MusicalKeys("C Major:", "CDEFGA", "C, D, E, F, G, A"),
-            MusicalKeys("C# Major:", "12F34C", "C#, D#, F, G♭, A♭, C"),
+            MusicalKeys("C Minor:", "CD2FG4", "C, D, Eb, F, G, Ab"),
+            MusicalKeys("C# Major:", "12F34C5", "C#, D#, F, Gb, Ab, Bb, C"),
+            MusicalKeys("C# Minor:", "12E34B", "C#, D#, E, F#, G#, A, B"),
             MusicalKeys("D Major:", "DE3GAB1", "D, E, F#, G, A, B, C#"),
-            MusicalKeys("D# Major:", "2FG45CD", "D#, F, G, A♭, B♭, C, D"),
+            MusicalKeys("D Minor:", "DEFGA5C", "D, E, F, G, A, Bb, C"),
+            MusicalKeys("D# Major:", "2FG45CD", "D#, F, G, Ab, Bb, C, D"),
+            MusicalKeys("D# Minor:", "2F345B1", "D#, F, Gb, Ab, Bb, B, C#"),
             MusicalKeys("E Major:", "E34AB12", "E, F#, G#, A, B, C#, D#"),
-            MusicalKeys("F Major:", "FGA5CDE", "F, G, A, B♭, C, D, E"),
+            MusicalKeys("E Minor:", "E3GABCD", "E, F#, G, A, B, C, D"),
+            MusicalKeys("F Major:", "FGA5CDE", "F, G, A, Bb, C, D, E"),
+            MusicalKeys("F Minor:", "FG45C12", "F, G, Ab, Bb, C, Db, Eb"),
             MusicalKeys("F# Major:", "345B12F", "F#, G#, A#, B, C#, D#, F"),
+            MusicalKeys("F# Minor:", "34AB1DE", "F#, G#, A, B, C#, D, E"),
             MusicalKeys("G Major:", "GABCDE3", "G, A, B, C, D, E, F#"),
-            MusicalKeys("G# Major:", "45C12FG", "G#, A#, C, D♭, E♭, F, G"),
+            MusicalKeys("G Minor:", "GA5CD2F", "G, A, Bb, C, D, Eb, F"),
+            MusicalKeys("G# Major:", "45C12FG", "G#, A#, C, Db, Eb, F, G"),
+            MusicalKeys("G# Minor:", "45B12E3", "G#, A#, B, C#, D#, E, F#"),
             MusicalKeys("A Major:", "AB1DE34", "A, B, C#, D, E, F#, G#"),
-            MusicalKeys("A# Major:", "A5CD2FG", "A, B♭, C, D, E♭, F, G"),
+            MusicalKeys("A Minor:", "ABCDEFG", "A, B, C, D, E, F, G"),
+            MusicalKeys("A# Major:", "5CD2FGA", "A#, Bb, C, D, Eb, F, G, A"),
+            MusicalKeys("A# Minor:", "5C12F34", "A#, C, Db, Eb, F, Gb, Ab"),
             MusicalKeys("B Major:", "B12E345", "B, C#, D#, E, F#, G#, A#"),
+            MusicalKeys("B Minor:", "B1DE3GA", "B, C#, D, E, F#, G, A"),
             ]
     # Temporary input for testing
     search = input("Enter notes: ")
